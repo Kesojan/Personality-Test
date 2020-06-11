@@ -1,12 +1,11 @@
 package hmw8;
-/* Name:Kesojan Premakumar
- * 20837310
- * HMW 8 Q1
+/* Name:Kesojan 
  * March 30 2020
  * Personality Test(tests personality according to answers)
- * input= file name and output file name
- * output=Generates new file with the personality results and statistics
+ * Objective= Computes the personality scale for the user using the defined algorithm
+ *	      which categorizes users, also provides statsitics and question analytics
  */
+
 import java.util.*;
 import java.io.*;
 
@@ -49,7 +48,10 @@ public class PersonalityTest {
 			}
 		}
 	}
-
+	
+	/* This method iterates through each string while parsing applies appropriate personality
+	 * dimenison in the form of a char, applied tokenization to effectively scan each word
+	 */
 	public static void countResult(String wordRead, PrintStream output, String outputName) throws FileNotFoundException {
 		// Initializing array
 		double[] aCount = new double[DIMENSION];
@@ -112,6 +114,9 @@ public class PersonalityTest {
 
 	}
 
+	/* This method calculates the personlaity with the predetermined algorithm
+	 * Computes the total score essentially and differentiates the users split personalities
+	 */
 	public static void dimension(double[] aCount, double[] bCount, PrintStream output) {
 		int[] percent = new int[4];
 
@@ -156,7 +161,9 @@ public class PersonalityTest {
 		System.out.println();
 
 	}
-
+	/* This menthod checks whether the input files is valid/exists
+	 * Throws an exception to indicate when file is not found to user
+	 */
 	public static String fileExists(String fileName, Scanner console) {
 		// this method checks if user input file exists in system
 		File fileCheck = new File(fileName);
